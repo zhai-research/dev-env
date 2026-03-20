@@ -17,16 +17,12 @@ RUN apt-get update \
     && sed -i 's|http://security.ubuntu.com/ubuntu/|https://mirrors.tuna.tsinghua.edu.cn/ubuntu/|g' /etc/apt/sources.list.d/ubuntu.sources \
     && rm -rf /var/lib/apt/lists/*
 
-# 安装 uv
-RUN apt-get update && apt-get install -y --no-install-recommends curl \
+# 安装 uv、git、vim
+RUN apt-get update && apt-get install -y --no-install-recommends curl git vim \
     && rm -rf /var/lib/apt/lists/* \
     && curl -LsSf https://astral.sh/uv/install.sh | sh \
     && mv /root/.local/bin/uv /usr/local/bin/uv \
-    && mv /root/.local/bin/uvx /usr/local/bin/uvx
-
-# 配置 Git 使用代理
-RUN apt-get update && apt-get install -y --no-install-recommends git \
-    && rm -rf /var/lib/apt/lists/* \
+    && mv /root/.local/bin/uvx /usr/local/bin/uvx \
     && git config --global url."${GH_PROXY}/https://github.com/".insteadOf https://github.com/
 
 # uv 配置
