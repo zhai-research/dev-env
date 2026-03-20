@@ -36,6 +36,9 @@ RUN mkdir -p /root/.config/uv
 COPY configs/uv.toml /root/.config/uv/uv.toml
 RUN chmod 644 /root/.config/uv/uv.toml
 
+# 设置 uv Python 下载镜像（使用 GH_PROXY）
+ENV UV_PYTHON_INSTALL_MIRROR=${GH_PROXY}/https://github.com/astral-sh/python-build-standalone/releases/download
+
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]

@@ -1,5 +1,3 @@
-python-install-mirror = "${GH_PROXY}/https://github.com/astral-sh/python-build-standalone/releases/download"
-
 [[index]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 default = true
