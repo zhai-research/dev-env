@@ -1,6 +1,6 @@
 # Docker开发环境
 
-这是一个基于Ubuntu的Docker开发环境，包含SSH服务器和你的SSH公钥。
+这是一个基于 Ubuntu 24.04 的 Docker 开发环境，包含 SSH 服务器和常用开发工具。
 
 ## 设置说明
 
@@ -82,13 +82,21 @@ ssh -p 3333 root@localhost
 
 ## 包含的软件
 
-- Ubuntu Latest
+- Ubuntu 24.04 LTS
 - OpenSSH Server
 - Git
-- Vim
-- Curl
+- Fish Shell
+- NeoVim
+- Tmux
+- Yazi (终端文件管理器)
+- uv (Python 包管理器)
+- FFmpeg
+- 7zip
+- jq
+- ripgrep, fd-find, fzf, zoxide
+- Poppler (PDF 工具)
+- ImageMagick
 - Build Essential (gcc, make等)
-- Sudo
 
 ## 安全说明
 
